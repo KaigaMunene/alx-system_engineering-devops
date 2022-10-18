@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# displays content of current directory in list format using for loop
+
+for file in *
+do
+    echo "$file" | cut -d '_' -f2
+done
