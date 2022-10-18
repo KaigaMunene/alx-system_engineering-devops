@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Output "Best School" 10 times using until loop
+#!/usr/bin/env bash
 count=1
 until [ $count -gt 10 ]
 do
