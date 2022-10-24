@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# script that creates a file containing its PID
+echo $BASHPID > /var/run/myscript.pid
