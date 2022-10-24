@@ -1,3 +1,16 @@
 #!/usr/bin/env bash
 # script that creates a file containing its PID
-$touch /var/run/myscript.pid
+
+function del(){
+    rm /var/run/myscript.pid
+}
+
+trap 'echo I hate the kill command' SIGINT SIGTERM
+trap "echo Y U no love me?!;del" SIGINT
+
+echo $$ >> /var/run/myscript.pid
+while true
+do
+    echo "To infinity and beyond"
+    sleep 1
+done
