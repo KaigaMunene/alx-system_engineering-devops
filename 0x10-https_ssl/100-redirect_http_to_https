@@ -34,8 +34,16 @@ frontend www-https
 backend www-backend
     balance  roundrobin
     redirect scheme https if !{ ssl_fc }
-    server 64840-web-01 100.26.247.87.28:80 check
-    server 64840-web-02 3.90.70.167:80 check
+    server 64840-web-01 100.25.212.90:80 check
+    server 64840-web-02 100.26.136.169 check
 
 backend letsencrypt-backend
     server letsencrypt 127.0.0.1:54321
+
+listen 261-lb-01
+       bind *:80
+        mode http
+        stats enable
+#        balance roundrobin
+        server 261-web-01 100.25.212.90:80 check
+        server 261-web-02 100.26.136.169:80 check
